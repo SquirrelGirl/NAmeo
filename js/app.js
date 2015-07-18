@@ -7,8 +7,7 @@ var CardList = Parse.Collection.extend();
 var cards = new CardList;
 cards.query = new Parse.Query(Card);
 cards.query.limit(1000);
-cards.fetch().then(function () {
-});
+cards.fetch();
 
 var parametres = {
   nb_equipes: 2,
@@ -172,7 +171,7 @@ function parametre1() {
 //fonction lancee quand on est sur la page parametres2
 function parametres2() {
 
-  var les_cartes = cards.shuffle();
+  var les_cartes = cards.shuffle().toArray();
   console.log(les_cartes);
   les_cartes = les_cartes.splice(0, parametres.nb_cartes);
   console.log(les_cartes);
