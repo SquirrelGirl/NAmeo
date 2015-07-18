@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NAMEO</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <a href="accueil.html" class="btn btn-link btn-nav pull-right">
+        <span class="icon icon-home"></span>
+      </a>
+      <h1 class="title">NAMEO</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content-padded content" id="manchefin">
+        <h1>Fin de la <span id="manche"></span> manche</h1>
+        <p class="content-padded" data-numero="0">l'équipe <span id="nom_equipe1"></span> a <span id="points_equipe1"></span> points</p>
+        <p class="content-padded" data-numero="1">l'équipe <span id="nom_equipe2"></span> a <span id="points_equipe2"></span> points</p>
+        <p class="content-padded" data-numero="2">l'équipe <span id="nom_equipe3"></span> a <span id="points_equipe3"></span> points</p>
+        <p class="content-padded" data-numero="3">l'équipe <span id="nom_equipe4"></span> a <span id="points_equipe4"></span> points</p>
+
+        <a href="#cartes_devinees" class="btn btn-block" data-numero="0">Cartes devinées équipe 1</a>
+
+        <a href="#cartes_devinees" class="btn btn-block" data-numero="1">Cartes devinées équipe 2</a>
+
+        <a href="#cartes_devinees" class="btn btn-block" data-numero="2">Cartes devinées équipe 2</a>
+
+        <a href="#cartes_devinees" class="btn btn-block" data-numero="3">Cartes devinées équipe 2</a>
+
+
+        <div id="cartes_devinees" class="modal">
+          <header class="bar bar-nav">
+            <a class="icon icon-close pull-right" href="#cartes_devinees"></a>
+          </header>
+          <div class="content">
+            <p class="content-padded">
+              CARTES DEVINEES DE L'EQUIPE
+          </p>
+          </div>
+        </div>
+
+      <div class="bar bar-standard bar-footer">
+        <button class="btn btn-block" id="fin_manche">MANCHE SUIVANTE</button>
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

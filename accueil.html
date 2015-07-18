@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NAMEO</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <h1 class="title">NAMEO</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+
+    <div class="content-padded content">
+      <h1>Bienvenue sur Nameo !</h1>
+
+      <a href="#myModalexample" class="btn btn-block">Règles</a>
+      <div id="myModalexample" class="modal">
+        <header class="bar bar-nav">
+          <a class="icon icon-close pull-right" href="#myModalexample"></a>
+        </header>
+
+        <div class="content">
+          <p class="content-padded">
+            BUT DU JEU </br>
+            Nameo se joue en trois manches avec 2 équipes ou
+            plus. Le but est de deviner des personnalités. L’équipe qui
+            totalise le plus de points à l’issue de la partie a gagné.</br>
+            </br>
+            DEROULEMENT D'UNE PARTIE</br>
+            Une partie de Nameo comporte 3 manches.
+            Une manche se déroule en un certain nombre de tours. Chaque équipe joue à son tour. Seuls les joueurs
+            de l'équipe actives jouent, les autres joueurs sont spectateurs et ne peuvent rien dire.
+            Le joueur actif a 30 secondes pour faire découvrir le maximum de personnalités à son équipe.
+            Durant la première manche, le joueur actif parle librement. Durant la deuxième manche, le joueur actif
+            ne peut dire qu’un seul mot par personnalité.Durant la troisième manche, le joueur actif ne peut pas
+            parler mais il peut utiliser des mimes, fredonner une chanson et faire des bruitages. </br>
+            </br>
+            PREMIERE MANCHE</br>
+            Lors de la première manche, le joueur actif peut parler librement mais il doit néanmoins
+            respecter quelques règles :</br>
+            • prononcer des parties, ou des diminutifs, des noms et prénoms indiqués sur la carte, et ce même
+            dans une autre langue (par exemple: Michael White pour faire deviner Michel Blanc) ;</br>
+            • énumérer des lettres de l’alphabet (par exemple: il est interdit de dire cela commence par un B,
+            cela commence par la 2e lettre de l’alphabet) ;</br>
+            • passer une carte.</br>
+            Si le joueur actif commet une faute, il clique sur "passer" pour passer la carte qui ne pourra plus être
+            devinée ce tour-ci.
+            Le ou les coéquipiers du joueur actif peuvent faire autant de propositions qu’ils le souhaitent.
+            Dès que le nom est trouvé (ou le nom et le prénom si les joueurs ont décidé de corser les choses),
+            le joueur actif clique sur le bouton "trouvé". Une nouvelle carte s'affiche.
+            Le joueur actif doit faire trouver la carte avant de passer à la suivante.
+            Dès que le temps est écoulé, le tour de cette équipe s’arrête instantanément et
+            plus aucune proposition n’est acceptée.
+            On passe à l’équipe suivante.
+            On continue ainsi jusqu’à ce que les cartes soient épuisées.
+            Chaque nom deviné rapporte un point à l'équipe du joueur actif.</br>
+            </br>
+            DEUXIEME MANCHE</br>
+            La deuxième manche est identique à la première
+            exception faite des changements suivants :
+            • le joueur actif ne peut plus dire qu’un seul mot par personnalité (les mots composés sont acceptés);
+            • l’équipe du joueur actif ne peut donner qu’une seule
+            proposition par carte. Attention, lorsque les équipes
+            comportent plus de 2 personnes, seule la première proposition
+            compte. Même si une seconde proposition
+            s’avère correcte le point n’est pas gagnée.
+            En cas de bonne proposition, le joueur actif clique sur "Trouvé"
+            En cas de mauvaise proposition, le joueur actif clique sur "Passer"
+            Le joueur actif n’est plus obligé de faire trouver la carte avant de passer à la suivante,
+            il peut cliquer sur "Passer" pour passer des cartes.
+            Attention, toute carte passée l’est définitivement pour le tour.
+            Chaque nom deviné rapporte un point à l'équipe du joueur actif.</br>
+            </br>
+            TROISIEME MANCHE</br>
+            La troisième manche est identique en tout point à la
+            deuxième manche excepté que le joueur actif n’a plus le
+            droit de parler. Il peut seulement mimer, fredonner
+            une chanson et effectuer des bruitages (onomatopées).
+            Par exemple, « whaf whaf », « miaou », « pan », « boum ».
+            Chaque nom deviné rapporte un point à l'équipe du joueur actif.</br>
+            </br>
+            VICTOIRE</br>
+            L'équipe qui a le plus de points (qui a fait deviné le plus de personnalités) a gagné.
+        </p>
+        </div>
+      </div>
+
+      <a href="parametre1.html" class="btn btn-block">Jouer</a>
+
+
+  </body>
+</html>
