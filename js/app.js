@@ -171,7 +171,7 @@ function parametre1() {
 //fonction lancee quand on est sur la page parametres2
 function parametres2() {
 
-  var les_cartes = cards.shuffle().toArray();
+  var les_cartes = cards.shuffle();
   console.log(les_cartes);
   les_cartes = les_cartes.splice(0, parametres.nb_cartes);
   console.log(les_cartes);
