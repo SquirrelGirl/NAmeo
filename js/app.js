@@ -171,11 +171,9 @@ function parametre1() {
 //fonction lancee quand on est sur la page parametres2
 function parametres2() {
 
-  var les_cartes = cards.shuffle();
-  console.log(les_cartes);
+  var les_cartes = cards.pluck('name');
+  melanger(les_cartes);
   les_cartes = les_cartes.splice(0, parametres.nb_cartes);
-  console.log(les_cartes);
-
 
   chrono = new Chrono(parametres.duree_tour, function() {
     equipe_qui_joue = (equipe_qui_joue + 1) % parametres.nb_equipes
