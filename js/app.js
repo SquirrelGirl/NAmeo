@@ -1,5 +1,14 @@
 console.log("bonjour")
 
+Parse.initialize("fH1gjoMjy4S8T8oACTiqoAwFYRF7I7CXfIzMbpxh", "NkibDpbgLfjR0Kv8A5TjnMrdBhSZNc6uAt2SgR6B");
+
+var Card = Parse.Object.extend("Card");
+var CardList = Parse.Collection.extend();
+var cards = new CardList;
+cards.query = new Parse.Query(Card);
+cards.query.limit(1000);
+cards.fetch();
+
 var parametres = {
   nb_equipes: 2,
   nb_cartes: 40,
@@ -23,7 +32,7 @@ var les_equipes = [{
   points_equipe: 0,
   cartes_devinees: []
 }]
-var les_cartes = ["Bob Marley", "Bob Dylan", "Bob l'éponge"]
+var les_cartes = []
 var les_cartes_passees = []
 
 var manches =[{
@@ -161,6 +170,11 @@ function parametre1() {
 
 //fonction lancee quand on est sur la page parametres2
 function parametres2() {
+
+  var les_cartes = cards.pluck('name');
+  melanger(les_cartes);
+  les_cartes = les_cartes.splice(0, parametres.nb_cartes);
+
   chrono = new Chrono(parametres.duree_tour, function() {
     equipe_qui_joue = (equipe_qui_joue + 1) % parametres.nb_equipes
     PUSH({url: 'manchedebut'})
