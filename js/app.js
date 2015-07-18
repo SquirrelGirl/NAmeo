@@ -12,7 +12,7 @@ cards.fetch();
 var parametres = {
   nb_equipes: 2,
   nb_cartes: 40,
-  duree_tour: 5,
+  duree_tour: 30,
   ordre_aleatoire: true
 }
 var les_equipes = [{
@@ -171,10 +171,10 @@ function parametre1() {
 //fonction lancee quand on est sur la page parametres2
 function parametres2() {
 
-  var les_cartes = cards.pluck('name');
+  les_cartes = cards.pluck('name');
   melanger(les_cartes);
   les_cartes = les_cartes.splice(0, parametres.nb_cartes);
-
+console.log(les_cartes)
   chrono = new Chrono(parametres.duree_tour, function() {
     equipe_qui_joue = (equipe_qui_joue + 1) % parametres.nb_equipes
     PUSH({url: 'manchedebut'})
@@ -182,10 +182,12 @@ function parametres2() {
     $('#chronometre').text(temps_restant)
   })
   console.log("j'ai lancé la fonction parametres2")
+
     // for tous les data-numero supérieur au nombre d'équipe > suprimer
   var max = 4
   for (var numero = parametres.nb_equipes + 1; numero <= max; numero++) {
     console.log(numero)
+
     $('input[data-numero="' + numero + '"]').remove()
   }
   //enregistre les noms des equipes
