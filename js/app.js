@@ -275,7 +275,7 @@ function manchedebut() {
       $('a[data-numero="' + numero + '"]').remove()
     }
 
-/
+
 
 
   $('a[data-numero]').on('touchend click', function(){
