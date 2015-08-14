@@ -170,8 +170,8 @@ function parametre1() {
 
 //fonction lancee quand on est sur la page parametres2
 function parametres2() {
-
-  les_cartes = cards.pluck('name');
+console.log(cards);
+  les_cartes = cards.toArray();
   melanger(les_cartes);
   les_cartes = les_cartes.splice(0, parametres.nb_cartes);
 console.log(les_cartes)
@@ -221,6 +221,8 @@ function mancheintro(){
 function manchedebut() {
   //à écrire
   $('#nom_equipe').text(les_equipes[equipe_qui_joue].nom_equipe)
+  console.log(equipe_qui_joue)
+  $('#manchedebut').addClass("equipe-" + equipe_qui_joue)
   $('#demarrer').on('click', function () {
     chrono.start();
     PUSH({url:'manchemilieu'})
@@ -231,7 +233,8 @@ function manchedebut() {
 
   //fonction lancee quand on est sur la page manchemilieu
   function manchemilieu() {
-    $("#carte").text(les_cartes[0])
+  $('#manchemilieu').addClass("equipe-" + equipe_qui_joue)
+    $("#carte").text(les_cartes[0].get('name'))
     //fonctions pour faire fonctionner les boutons
     $('#positive').on('click', function() {
       les_equipes[equipe_qui_joue].cartes_devinees.push(les_cartes.shift())
@@ -272,14 +275,14 @@ function manchedebut() {
       $('a[data-numero="' + numero + '"]').remove()
     }
 
-//ne fonctionne pas du tout !
+/
 
 
   $('a[data-numero]').on('touchend click', function(){
 console.log('j ai lancé la fonction qui ne marche pas')
     var numero_equipe = $(this).data('numero');
     var cartes_devinees = les_equipes[numero_equipe].cartes_devinees.map(function (carte) {
-      return "<li>"+carte+"</li>";
+      return "<li>"+carte.get('name')+"</li>";
     }).join('');
     $('#cartes_devinees .content-padded').html("Cartes devinées par l'équipe "
     +les_equipes[numero_equipe].nom_equipe+'<ul>'+ cartes_devinees +'</ul>')
